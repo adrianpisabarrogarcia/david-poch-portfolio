@@ -65,3 +65,15 @@ body { transition: background-color .4s ease, color .4s ease; }
   .js .reveal { opacity: 1; transform: none; }
   .hero-in { opacity: 1; }
 }
+
+/* Barra de scroll naranja */
+html { scrollbar-color: var(--color-accent) var(--color-stone-100); scrollbar-width: thin; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-stone-100); }
+::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 999px; border: 2px solid var(--color-stone-100); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent-dark); }
+
+/* Botón volver arriba */
+#to-top { opacity: 0; transform: translateY(16px) scale(.9); pointer-events: none; transition: opacity .3s ease, transform .3s ease, background-color .2s ease; }
+#to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+#to-top.show:hover { transform: translateY(-3px) scale(1.08); }
