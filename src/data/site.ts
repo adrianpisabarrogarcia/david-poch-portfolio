@@ -5,7 +5,7 @@ export const site = {
   name: 'David Poch Silva',
   tagline: 'Comunicador Audiovisual · Productor audiovisual',
   photo: '/david.webp',
-  email: 'TU_EMAIL@ejemplo.com', // también es el destino del formulario
+  email: 'dpoch1234@gmail.com', // también es el destino del formulario
   linkedin: 'https://www.linkedin.com/in/david-poch-silva-b7a8131b9/', // URL de LinkedIn definitiva
 };
 
