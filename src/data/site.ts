@@ -1,6 +1,6 @@
 // ⚠️ Rellena estos valores antes de publicar
 export const site = {
-  url: 'https://david-poch-portfolio.vercel.app',
+  url: 'https://david-poch-silva.vercel.app',
   description: 'Portfolio de David Poch Silva: comunicador audiovisual y productor de televisión deportiva (Jugones laSexta, TV3). Experiencia, proyectos y contacto.',
   name: 'David Poch Silva',
   tagline: 'Comunicador Audiovisual · Productor audiovisual',
