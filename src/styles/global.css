@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-accent: #e8590c;
+  --color-accent-dark: #c2410c;
+  --color-ink: var(--ink);
+  --color-surface: var(--surface);
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-stone-50 text-ink antialiased; }
+.btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition; }
+.btn-primary { @apply bg-accent text-white hover:bg-accent-dark; }
+.btn-ghost { @apply border border-stone-300 bg-surface hover:border-accent hover:text-accent; }
+.card { @apply rounded-2xl border border-stone-200 bg-surface p-6 shadow-sm; }
+.h1 { @apply text-3xl font-bold tracking-tight sm:text-4xl; }
+
+section[id] { scroll-margin-top: 6rem; @apply py-14 sm:py-20; }
+section[id]:not(#inicio) { @apply border-t border-stone-200; }
+
+/* ---------- Tema ---------- */
+:root {
+  --ink: #18181b; --surface: #ffffff;
+}
+:root.dark {
+  color-scheme: dark;
+  --ink: #f4f4f5; --surface: #121214;
+  --color-stone-50: #09090b;  --color-stone-100: #1c1c1f; --color-stone-200: #27272a;
+  --color-stone-300: #3f3f46; --color-stone-500: #a1a1aa; --color-stone-600: #b4b4bb; --color-stone-700: #d4d4d8;
+}
+body { transition: background-color .4s ease, color .4s ease; }
+.card, header, .btn { transition: background-color .4s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease, color .3s ease; }
+
+/* ---------- Animaciones ---------- */
+@keyframes fade-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes blob { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,-30px) scale(1.15); } }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgb(232 89 12 / .55); } 100% { box-shadow: 0 0 0 18px rgb(232 89 12 / 0); } }
+@keyframes shimmer { to { background-position: 200% center; } }
+
+.hero-in { opacity: 0; animation: fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(var(--i, 0) * 120ms + 100ms); }
+.hero-photo { animation: fade-in 1s ease .2s both, float 6s ease-in-out 1.2s infinite; }
+.hero-glow { animation: blob 12s ease-in-out infinite; }
+.grad-text { background: linear-gradient(90deg, var(--ink), #e8590c, var(--ink)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: fade-up .8s cubic-bezier(.2,.7,.2,1) forwards, shimmer 6s linear infinite; animation-delay: calc(var(--i, 0) * 120ms + 100ms), 0s; }
+
+/* Reveal al hacer scroll (solo con JS) */
+.js .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+.card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -12px rgb(232 89 12 / .35); border-color: var(--color-accent); }
+.btn:hover { transform: translateY(-2px) scale(1.03); }
+.btn:active { transform: scale(.97); }
+.yt span > span { animation: pulse-ring 1.8s ease-out infinite; }
+.tag { transition: transform .2s ease, background-color .2s ease, color .2s ease; }
+.tag:hover { transform: translateY(-2px) scale(1.06); background-color: var(--color-accent); color: #fff; }
+.dot { animation: pulse-ring 2.4s ease-out infinite; }
+.nav-link { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+  .hero-in { opacity: 1; }
+}

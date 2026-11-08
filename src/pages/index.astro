@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { site, experience, projects, education, sicue, complementary, skills, languages, volunteering } from '../data/site';
+const action = `https://formsubmit.co/${site.email}`;
+const input = 'mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30';
+---
+<Base title="Inicio">
+  <section id="inicio" class="relative grid items-center gap-10 md:grid-cols-[1fr_320px]">
+    <div aria-hidden="true" class="hero-glow pointer-events-none absolute -top-10 right-0 -z-10 h-72 w-72 rounded-full bg-accent/25 blur-3xl"></div>
+    <div class="order-2 md:order-1">
+      <div class="hero-in mb-4 flex items-center gap-3" style="--i:0">
+        <p class="text-sm font-semibold uppercase tracking-widest text-accent">Portfolio</p>
+        <a href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de David Poch Silva" title="LinkedIn"
+           class="grid h-9 w-9 place-items-center rounded-full border border-stone-300 bg-surface text-stone-600 transition hover:-translate-y-0.5 hover:scale-110 hover:border-[#0a66c2] hover:bg-[#0a66c2] hover:text-white">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      </div>
+      <h1 class="hero-in grad-text text-4xl font-bold tracking-tight sm:text-6xl" style="--i:1">{site.name}</h1>
+      <p class="hero-in mt-4 text-lg text-stone-600 sm:text-xl" style="--i:2">{site.tagline}</p>
+      <div class="hero-in mt-8 flex flex-wrap gap-3" style="--i:3">
+        <a href="#experiencia" class="btn btn-primary">Ver experiencia</a>
+        <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
+      </div>
+    </div>
+    <img src={site.photo} alt={`Foto de ${site.name}`} width="320" height="320" fetchpriority="high"
+         class="hero-photo order-1 mx-auto aspect-square w-56 rounded-3xl object-cover shadow-xl ring-4 ring-surface md:order-2 md:w-80" />
+  </section>
+
+  <section id="sobre-mi">
+    <h2 class="h1">Sobre mí</h2>
+    <p class="mt-6 max-w-3xl text-lg leading-relaxed text-stone-700">Comunicador audiovisual con experiencia en producción de televisión deportiva en <strong>Jugones (laSexta · Atresmedia)</strong> y <strong>CCMA · TV3</strong>. Especializado en acreditaciones, gestión de personal, solicitud de equipos, coordinación y facturación de proveedores. Manejo avanzado de Adobe Premiere Pro. Siempre al día de la actualidad deportiva.</p>
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <article class="card">
+        <h3 class="text-xl font-semibold">⛰️ Montaña y naturaleza</h3>
+        <p class="mt-3 text-stone-700">Amante de la montaña y la naturaleza, disfruto de los paisajes montañosos. He coronado cimas del Pirineo como el <strong>Aneto</strong>, la <strong>Pica d’Estats</strong> o el <strong>Molieres</strong>, y clásicos más sencillos como <strong>La Mola</strong>, <strong>Sant Jeroni</strong> (Montserrat) o el <strong>Peñalara</strong>. Aficionado al trekking y al running trail.</p>
+      </article>
+      <article class="card">
+        <h3 class="text-xl font-semibold">🎬 Cine</h3>
+        <p class="mt-3 text-stone-700">Como buen estudiante de audiovisuales, el cine es uno de mis grandes pasatiempos: disfruto desde una película meramente comercial hasta las piezas más elitistas. Destacaría <strong>Señales</strong>, <strong>Sospechosos habituales</strong>, <strong>Interstellar</strong> y <strong>El Bosque</strong> como mis favoritas.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <h2 class="h1">Experiencia</h2>
+    <ol class="relative mt-10 ml-3 border-l-2 border-stone-200">
+      {experience.map((e) => (
+        <li class="relative mb-8 ml-6">
+          <span class="absolute top-[1.65rem] -left-[33px] dot h-4 w-4 rounded-full border-4 border-stone-50 bg-accent"></span>
+          <div class="card">
+            <p class="text-sm font-medium text-accent">{e.dates}</p>
+            <h3 class="mt-1 text-lg font-semibold">{e.role}</h3>
+            <p class="text-stone-600">
+              {e.url ? <a href={e.url} target="_blank" rel="noopener noreferrer" class="underline decoration-stone-300 underline-offset-4 hover:text-accent">{e.company} ↗</a> : e.company}
+            </p>
+            <ul class="mt-3 list-disc space-y-1 pl-5 text-stone-700">{e.points.map((p) => <li>{p}</li>)}</ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section id="proyectos">
+    <h2 class="h1">Proyectos</h2>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.filter((p) => p.featured).map((p) => <ProjectCard p={p} />)}
+    </div>
+    <h3 class="mt-14 text-2xl font-semibold">Más proyectos</h3>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {projects.filter((p) => !p.featured).map((p) => <ProjectCard p={p} />)}
+    </div>
+  </section>
+
+  <section id="formacion">
+    <h2 class="h1">Formación y competencias</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="card">
+        <h3 class="text-xl font-semibold">Formación académica</h3>
+        <ul class="mt-4 space-y-3">{education.map((e) => <li><p class="font-medium">{e.title}</p><p class="text-sm text-stone-600">{e.place} · {e.dates}</p></li>)}</ul>
+        <h4 class="mt-6 font-semibold">Intercambios SICUE</h4>
+        <ul class="mt-2 list-disc pl-5 text-stone-700">{sicue.map((s) => <li>{s}</li>)}</ul>
+      </div>
+      <div class="card">
+        <h3 class="text-xl font-semibold">Formación complementaria</h3>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-stone-700">{complementary.map((c) => <li>{c}</li>)}</ul>
+      </div>
+      <div class="card md:col-span-2">
+        <h3 class="text-xl font-semibold">Competencias</h3>
+        <div class="mt-4 grid gap-6 sm:grid-cols-3">
+          {Object.entries(skills).map(([k, v]) => (
+            <div><h4 class="mb-2 text-sm font-semibold uppercase tracking-wide text-accent">{k}</h4>
+              <div class="flex flex-wrap gap-2">{v.map((s) => <span class="tag cursor-default rounded-full bg-stone-100 px-3 py-1 text-sm">{s}</span>)}</div></div>
+          ))}
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="text-xl font-semibold">Idiomas</h3>
+        <ul class="mt-4 space-y-2">{languages.map((l) => <li class="flex justify-between border-b border-stone-100 pb-2"><span class="font-medium">{l.name}</span><span class="text-stone-600">{l.level}</span></li>)}</ul>
+      </div>
+      <div class="card">
+        <h3 class="text-xl font-semibold">Voluntariado y otros</h3>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-stone-700">{volunteering.map((v) => <li>{v}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2 class="h1">Contacto</h2>
+    <div class="mt-8 grid gap-8 md:grid-cols-[1fr_1.4fr]">
+      <div class="space-y-4">
+        <a href={`mailto:${site.email}`} class="card block hover:border-accent"><p class="text-sm text-stone-500">Email</p><p class="font-semibold">{site.email}</p></a>
+        <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="card block hover:border-accent"><p class="text-sm text-stone-500">LinkedIn</p><p class="font-semibold">Ver perfil ↗</p></a>
+      </div>
+      <form method="POST" action={action} class="card space-y-4">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde la web" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+        <label class="block"><span class="text-sm font-medium">Nombre</span><input required name="name" autocomplete="name" class={input} /></label>
+        <label class="block"><span class="text-sm font-medium">Email</span><input required type="email" name="email" autocomplete="email" class={input} /></label>
+        <label class="block"><span class="text-sm font-medium">Mensaje</span><textarea required name="message" rows="5" class={input}></textarea></label>
+        <button class="btn btn-primary w-full">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+</Base>

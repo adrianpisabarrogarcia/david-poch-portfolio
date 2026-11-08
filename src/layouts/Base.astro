@@ -1,0 +1,78 @@
+---
+import '../styles/global.css';
+import { site, nav } from '../data/site';
+interface Props { title: string; description?: string }
+const { title, description = `${site.name} — ${site.tagline}` } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title === 'Inicio' ? site.name : `${title} · ${site.name}`}</title>
+    <link rel="icon" href="/favicon.svg" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      try { var t = localStorage.getItem('theme') || 'dark'; } catch (e) { var t = 'dark'; }
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="sticky top-0 z-20 border-b border-stone-200 bg-stone-50/90 backdrop-blur">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        <a href="/" class="font-bold tracking-tight">David Poch<span class="text-accent">.</span></a>
+        <nav aria-label="Principal" class="ml-auto hidden gap-1 md:flex">
+          {nav.map((n) => (
+            <a href={n.href} data-nav
+               class="nav-link rounded-full px-3 py-1.5 text-sm font-medium text-stone-600 transition hover:text-accent">{n.label}</a>
+          ))}
+        </nav>
+        <button type="button" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema"
+          class="ml-2 grid h-9 w-9 place-items-center rounded-full border border-stone-300 bg-surface text-lg transition hover:rotate-12 hover:scale-110 hover:border-accent">
+          <span class="hidden dark:inline">☀️</span><span class="dark:hidden">🌙</span>
+        </button>
+      </div>
+      <!-- Pestañas móvil: barra desplazable -->
+      <nav aria-label="Principal móvil" class="flex gap-1 overflow-x-auto px-4 pb-2 md:hidden">
+        {nav.map((n) => (
+          <a href={n.href} data-nav
+             class="shrink-0 rounded-full border border-stone-200 bg-surface px-3 py-1.5 text-sm font-medium text-stone-600">{n.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main class="mx-auto max-w-5xl px-4"><slot /></main>
+    <footer class="reveal in border-t border-stone-200 py-6 text-center text-sm text-stone-500">© {new Date().getFullYear()} {site.name}</footer>
+  <script>
+      document.getElementById('theme-toggle')?.addEventListener('click', () => {
+        const dark = document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch {}
+      });
+
+      // Reveal on scroll con escalonado
+      const targets = document.querySelectorAll('main section:not(#inicio) :is(h2, h3.text-2xl, p.max-w-3xl, .card, ol > li, a.card)');
+      const seen = new Map<Element, number>();
+      targets.forEach((el) => {
+        const p = el.parentElement!;
+        const i = seen.get(p) ?? 0; seen.set(p, i + 1);
+        el.classList.add('reveal');
+        (el as HTMLElement).style.setProperty('--d', Math.min(i, 5) * 90 + 'ms');
+      });
+      const rv = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { const t = e.target as HTMLElement; t.classList.add('in'); rv.unobserve(t); setTimeout(() => { t.classList.remove('reveal', 'in'); t.style.removeProperty('--d'); }, 1400); } }), { threshold: 0.12 });
+      targets.forEach((el) => rv.observe(el));
+
+      const links = document.querySelectorAll<HTMLAnchorElement>('[data-nav]');
+      const on = (id: string) => links.forEach((a) => {
+        const active = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('!bg-accent', active);
+        a.classList.toggle('!text-white', active);
+        if (active) a.scrollIntoView({ block: 'nearest', inline: 'center' });
+      });
+      const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && on(e.target.id)), { rootMargin: '-40% 0px -55% 0px' });
+      document.querySelectorAll('main section[id]').forEach((s) => io.observe(s));
+    </script>
+  </body>
+</html>
