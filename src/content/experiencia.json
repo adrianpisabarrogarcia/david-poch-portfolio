@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "role": "Ayudante de Producción y productor titular",
+      "company": "JUGONES (laSexta · Atresmedia)",
+      "dates": "Dic 2025 – Ago 2026",
+      "url": "https://www.lasexta.com/programas/jugones/",
+      "points": [
+        "De ayudante a productor titular en algunas emisiones.",
+        "Acreditaciones, gestión de personal y solicitud de equipos.",
+        "Coordinación, control en Excel y facturación de proveedores."
+      ]
+    },
+    {
+      "role": "Prácticas Producción TV",
+      "company": "JUGONES (laSexta · Atresmedia)",
+      "dates": "Jun 2025 – Nov 2025",
+      "url": "https://www.lasexta.com/programas/jugones/",
+      "points": [
+        "Contrato de prácticas en producción televisiva.",
+        "Acreditaciones, gestión de personal y petición de equipos.",
+        "Soporte al equipo de producción."
+      ]
+    },
+    {
+      "role": "Redactor en prácticas",
+      "company": "País Invisible · El Jornalet",
+      "dates": "2024 · 5 meses",
+      "url": "https://www.eljornalet.cat",
+      "points": [
+        "Prácticas extracurriculares en pódcast y diario digital.",
+        "Redacción y soporte corporativo."
+      ]
+    },
+    {
+      "role": "CM Twitter / Colaborador",
+      "company": "CinemaNet",
+      "dates": "2022 – 2023",
+      "url": "",
+      "points": [
+        "Community Manager de la cuenta de Twitter.",
+        "Críticas de cine y artículos."
+      ]
+    },
+    {
+      "role": "Mistery Shopper",
+      "company": "Service Innovation Group",
+      "dates": "2023 · 6 meses",
+      "url": "",
+      "points": [
+        "Observación de promotoras en estancos.",
+        "Comprobación de la correcta argumentación de los azafatos/as."
+      ]
+    },
+    {
+      "role": "Auxiliar de montaje",
+      "company": "Freeyourpost",
+      "dates": "2023 · 1 mes",
+      "url": "",
+      "points": [
+        "Prácticas en empresa de gestión de postproducción.",
+        "Control de calidad de los montajes y gestión administrativa."
+      ]
+    },
+    {
+      "role": "Prácticas curriculares",
+      "company": "CCMA · TV3",
+      "dates": "2021 – 2022 · 4 meses",
+      "url": "https://www.ccma.cat/tv3/",
+      "points": [
+        "Departamento de producción en deportes.",
+        "Soporte a tareas básicas de producción."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "education": [
+    {
+      "title": "Máster en Cine y TV",
+      "place": "Universidad Carlos III",
+      "dates": "2024–2025"
+    },
+    {
+      "title": "Grado en Comunicación Audiovisual",
+      "place": "Universitat de Barcelona",
+      "dates": "2019–2023"
+    },
+    {
+      "title": "Bachillerato",
+      "place": "Institució La Farga",
+      "dates": "2017–2019"
+    }
+  ],
+  "sicue": [
+    "Universidad del País Vasco",
+    "Universidad Complutense de Madrid"
+  ],
+  "complementary": [
+    "Competencias digitales en Emprendimiento Audiovisual — ECAM",
+    "Introducción a la realización audiovisual para Social Media",
+    "Pensamiento Creativo en la era de la IA — Universitat de Barcelona",
+    "Fotografía Digital — Blackkmera, Universidad del País Vasco",
+    "Participación en la realización de un juicio — Universidad Complutense de Madrid",
+    "Principales Contratos en Producción Audiovisual — Instituto RTVE",
+    "Saber hablar en público — saberhablar.com, con Fernando Silva Castignani"
+  ],
+  "skills": [
+    {
+      "categoria": "Técnicas",
+      "items": [
+        "Adobe Premiere Pro (avanzado)",
+        "DaVinci Resolve",
+        "After Effects",
+        "Photoshop",
+        "Canva",
+        "Reaper",
+        "Word",
+        "Excel",
+        "Google Drive"
+      ]
+    },
+    {
+      "categoria": "Producción",
+      "items": [
+        "Acreditaciones",
+        "Gestión de personal",
+        "Solicitud de equipos",
+        "Coordinación",
+        "Facturación de proveedores"
+      ]
+    },
+    {
+      "categoria": "Aptitudes",
+      "items": [
+        "Trabajo en equipo",
+        "Polivalente",
+        "Proactivo",
+        "Buena capacidad de aprendizaje"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "Castellano",
+      "level": "Alto · Nativo"
+    },
+    {
+      "name": "Catalán",
+      "level": "Alto · Nativo"
+    },
+    {
+      "name": "Inglés",
+      "level": "B2 académico"
+    }
+  ],
+  "volunteering": [
+    "Voluntariado Val d'Aran by UTMB (carreras ultra-trail Pirineos)",
+    "Monitor de taller de refuerzo escolar en colegio / instituto"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "title": "La superilla",
+      "role": "Productor · Cortometraje documental",
+      "url": "https://goo.su/h30L7",
+      "label": "Documental",
+      "icon": "🎞️",
+      "featured": true
+    },
+    {
+      "title": "Fu(tu)r",
+      "role": "Director · Cortometraje",
+      "url": "https://youtu.be/rs_UMhX8Afc",
+      "label": "YouTube",
+      "icon": "🎬",
+      "featured": true
+    },
+    {
+      "title": "Talkeando",
+      "role": "Pódcast · Trabajo de Fin de Grado",
+      "url": "https://www.youtube.com/@Talkeando-PodcastTalks",
+      "label": "Pódcast",
+      "icon": "🎙️",
+      "featured": true
+    },
+    {
+      "title": "Querido",
+      "role": "Iluminación · Cortometraje",
+      "url": "https://youtu.be/t6FSQxa6PU8",
+      "label": "YouTube",
+      "icon": "💡",
+      "featured": false
+    },
+    {
+      "title": "Espejo inconsciente",
+      "role": "Ayudante de cámara y guion técnico",
+      "url": "https://youtu.be/fJdVv_Ff15E",
+      "label": "YouTube",
+      "icon": "🎥",
+      "featured": false
+    },
+    {
+      "title": "Cambalache",
+      "role": "Gaffer y casting voz de doblaje",
+      "url": "https://www.imdb.com/title/tt31382070/fullcredits/",
+      "label": "IMDb",
+      "icon": "⭐",
+      "featured": false
+    },
+    {
+      "title": "Merienda",
+      "role": "Realizador y creador de la saga de cortometrajes experimentales",
+      "url": "https://youtube.com/playlist?list=PLqTBUm360zL9l5sEm_Ce3glDgEihGZ2j4",
+      "label": "Playlist",
+      "icon": "🍪",
+      "featured": false
+    }
+  ]
+}
