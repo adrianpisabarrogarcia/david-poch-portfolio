@@ -62,7 +62,7 @@ const jsonLd = {
   </head>
   <body>
     <header class="sticky top-0 z-20 border-b border-stone-200 bg-stone-50/90 backdrop-blur">
-      <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
         <a href="/" class="font-bold tracking-tight">David Poch<span class="text-accent">.</span></a>
         <nav aria-label="Principal" class="ml-auto hidden gap-1 md:flex">
           {nav.map((n) => (
@@ -76,10 +76,10 @@ const jsonLd = {
         </button>
       </div>
       <!-- Pestañas móvil: barra desplazable -->
-      <nav aria-label="Principal móvil" class="flex gap-1 overflow-x-auto px-4 pb-2 md:hidden">
+      <nav aria-label="Principal móvil" class="flex gap-2.5 overflow-x-auto px-4 pb-4 pt-0.5 [scrollbar-width:none] md:hidden">
         {nav.map((n) => (
           <a href={n.href} data-nav
-             class="shrink-0 rounded-full border border-stone-200 bg-surface px-3 py-1.5 text-sm font-medium text-stone-600">{n.label}</a>
+             class="shrink-0 rounded-full border border-stone-200 bg-surface px-4 py-2 text-sm font-medium text-stone-600">{n.label}</a>
         ))}
       </nav>
     </header>
