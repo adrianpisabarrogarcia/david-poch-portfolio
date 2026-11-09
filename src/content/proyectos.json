@@ -46,6 +46,12 @@
       "url": "https://www.jornalet.com/autor/david-poch-silva",
       "label": "Periódico digital ",
       "featured": false
+    },
+    {
+      "title": "Críticas de cine",
+      "role": "Colaborador ",
+      "url": "https://www.cinemanet.info/author/davidpoch/",
+      "featured": false
     }
   ]
 }
