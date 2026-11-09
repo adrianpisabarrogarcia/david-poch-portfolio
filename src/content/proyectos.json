@@ -48,9 +48,10 @@
       "featured": false
     },
     {
-      "title": "Críticas de cine",
+      "title": "CinemaNet - Críticas de cine",
       "role": "Colaborador ",
       "url": "https://www.cinemanet.info/author/davidpoch/",
+      "label": "Web de cine",
       "featured": false
     }
   ]
