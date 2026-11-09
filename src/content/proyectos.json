@@ -39,6 +39,13 @@
       "label": "Playlist",
       "icon": "🍪",
       "featured": false
+    },
+    {
+      "title": "Redacción El Jornalet",
+      "role": "Redactor ",
+      "url": "https://www.jornalet.com/autor/david-poch-silva",
+      "label": "Periódico digital ",
+      "featured": false
     }
   ]
 }
